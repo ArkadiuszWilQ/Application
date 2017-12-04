@@ -11,6 +11,11 @@ class Reader
 {
     private $settings;
 
+    public function __construct()
+    {
+        $this->settings = [];
+    }
+
     /**
      * Wczytuje plik ustawień
      *
@@ -20,7 +25,14 @@ class Reader
      */
     public function load(string $fileName)
     {
-        //TODO załadować zawartość podanego pliku do $this->settings (użyć merge -> nowe klucze są ważniejsze niż już istniejące)
+        if(file_exists(CONFIG_PATH . DIRECTORY_SEPARATOR . $fileName . '.php')) {
+            $fileDataAsArray = include CONFIG_PATH . DIRECTORY_SEPARATOR . $fileName . '.php';
+
+            $this->settings = array_merge($this->settings, $fileDataAsArray);
+            return true;
+        }
+
+        return false;
     }
 
     /**
@@ -33,6 +45,6 @@ class Reader
      */
     public function read(string $settingName, $defaultValue = null)
     {
-        return null;
+
     }
 }
