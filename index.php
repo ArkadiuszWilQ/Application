@@ -1,9 +1,8 @@
 <?php
 
-require_once "Classes\Autoload.php";
+$loader = require __DIR__ . '/vendor/autoload.php';
+$loader->addPsr4('Classes\\', __DIR__ . DIRECTORY_SEPARATOR . 'Classes');
 
-$loader = new Autoload();
-$loader->registerPaths([
-    __DIR__,
-    __DIR__ . DIRECTORY_SEPARATOR . 'Classes'
-]);
+$configReader = new Classes\Config\Reader();
+$configReader->load('database');
+$user = $configReader->read('user'); // root

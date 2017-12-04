@@ -1,0 +1,12 @@
+Pobieranie Kodu z githuba
+
+1. git clone https://github.com/ArkadiuszWilQ/Application.git
+
+lub
+
+1. git init
+2. git remote add origin https://github.com/ArkadiuszWilQ/Application.git
+3. git push --set-upstream origin master
+
+Instalowanie zależnośći:
+composer install
