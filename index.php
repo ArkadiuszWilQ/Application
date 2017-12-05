@@ -3,9 +3,18 @@
 include_once 'functions.php';
 include_once 'constants.php';
 
-$loader = require __DIR__ . '/vendor/autoload.php';
-$loader->addPsr4('Classes\\', __DIR__ . DIRECTORY_SEPARATOR . 'Classes');
+$autoloader = require __DIR__ . '/vendor/autoload.php';
+$autoloader->addPsr4('Classes\\', __DIR__ . DIRECTORY_SEPARATOR . 'Classes');
 
-$configReader = new Classes\Config\Reader();
-$configReader->load('database');
-$user = $configReader->read('user'); // root
+dd($_GET);
+
+//$configReader = new Classes\Config\Reader();
+//$configReader->load('database');
+//$user = $configReader->read('user'); // root
+
+$loader = new Twig_Loader_Filesystem(__DIR__ . DIRECTORY_SEPARATOR . 'App' . DIRECTORY_SEPARATOR . 'Views');
+$twig = new Twig_Environment($loader, array(
+    'cache' => __DIR__ . DIRECTORY_SEPARATOR . 'Cache',
+));
+
+echo $twig->render('index.html', array('name' => 'Fabien'));
