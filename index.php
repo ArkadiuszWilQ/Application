@@ -11,6 +11,10 @@ dd($_GET);
 //$configReader = new Classes\Config\Reader();
 //$configReader->load('database');
 //$user = $configReader->read('user'); // root
+//
+//
+//new Classes\Database\Connection('database');
+//new Classes\Database\Connection('database2');
 
 $loader = new Twig_Loader_Filesystem(__DIR__ . DIRECTORY_SEPARATOR . 'App' . DIRECTORY_SEPARATOR . 'Views');
 $twig = new Twig_Environment($loader, array(
