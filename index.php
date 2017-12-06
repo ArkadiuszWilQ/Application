@@ -7,8 +7,12 @@ $autoloader = require __DIR__ . '/vendor/autoload.php';
 $autoloader->addPsr4('Classes\\', __DIR__ . DIRECTORY_SEPARATOR . 'Classes');
 $autoloader->addPsr4('Controllers\\', __DIR__ . DIRECTORY_SEPARATOR . 'App' . DIRECTORY_SEPARATOR . 'Controllers');
 
-$app = new \Classes\Application();
-$app->run();
+$test = new \Classes\Config\Reader();
+$test->load('database');
+$test->read();
+
+//$app = new \Classes\Application();
+//$app->run();
 
 //$configReader = new Classes\Config\Reader();
 //$configReader->load('database');

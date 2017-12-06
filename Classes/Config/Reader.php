@@ -1,4 +1,5 @@
 <?php
+
 namespace Classes\Config;
 
 /**
@@ -11,9 +12,11 @@ class Reader
 {
     private $settings;
 
+
     public function __construct()
     {
         $this->settings = [];
+
     }
 
     /**
@@ -36,15 +39,28 @@ class Reader
     }
 
     /**
-     * Pobiera ustawienie z pliku
+     * Pobiera ustawienie z plikugi
      *
      * @param string $settingName
      * @param null $defaultValue
      *
      * @return mixed
      */
-    public function read(string $settingName, $defaultValue = null)
-    {
 
+    public function read(string $settingName = null, $defaultValue = null)
+    {
+        $key = $settingName;
+        if(array_key_exists($key, $this->settings)) {
+            dd($this->settings[$key]);
+
+        } elseif(isset($key) || !isset($key)) {
+
+            dd($this->settings);
+
+        } else {
+
+            echo "Klucz nie istnieje";
+        }
     }
+
 }
