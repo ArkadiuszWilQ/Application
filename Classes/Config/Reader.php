@@ -49,11 +49,11 @@ class Reader
 
     public function read(string $settingName = null, $defaultValue = null)
     {
-        $key = $settingName;
-        if(array_key_exists($key, $this->settings)) {
-            dd($this->settings[$key]);
 
-        } elseif(isset($key) || !isset($key)) {
+        if(array_key_exists($settingName, $this->settings)) {
+            dd($this->settings[$settingName]);
+
+        } elseif(isset($settingName) || !isset($settingName)) {
 
             dd($this->settings);
 
