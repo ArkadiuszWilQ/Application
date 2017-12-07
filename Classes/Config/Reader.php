@@ -46,21 +46,8 @@ class Reader
      *
      * @return mixed
      */
-
     public function read(string $settingName = null, $defaultValue = null)
     {
-
-        if(array_key_exists($settingName, $this->settings)) {
-            dd($this->settings[$settingName]);
-
-        } elseif(isset($settingName) || !isset($settingName)) {
-
-            dd($this->settings);
-
-        } else {
-
-            echo "Klucz nie istnieje";
-        }
+        return is_null($settingName) ? $this->settings : $this->settings[$settingName] ?? $defaultValue;
     }
-
 }
