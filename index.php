@@ -11,18 +11,19 @@ $autoloader->addPsr4('Controllers\\', __DIR__ . DIRECTORY_SEPARATOR . 'App' . DI
 //$test->load('database');
 //dd($test->read('database'));
 
-//$app = new \Classes\Application();
-//$app->run();
+$app = new \Classes\Core\Application();
+$app->run();
 
 //$configReader = new Classes\Config\Reader();
-//$configReader->load('database');
+//$configReader->load('databa   se');
 //$user = $configReader->read('user'); // root
-//
-//
 
-$insert = "INSERT INTO `first_task`.`test` (`key`, `value`) VALUES (''); ";
-$update = "UPDATE `first_task`.`test` SET `key` = ,`value`='' WHERE  `id`= ; ";
-$delete = "DELETE FROM `first_task`.`test` WHERE  `id`= ; ";
-$select = "SELECT * FROM `first_task`.`test` ";
-$connection1 = new Classes\Database\Connection('database');
+//$test = new \Classes\Config\Request();
+//$test->getFromGET();
+
+//$insert = "INSERT INTO `first_task`.`test` (`key`, `value`) VALUES (''); ";
+//$update = "UPDATE `first_task`.`test` SET `key` = ,`value`='' WHERE  `id`= ; ";
+//$delete = "DELETE FROM `first_task`.`test` WHERE  `id`= ; ";
+//$select = "SELECT * FROM `first_task`.`test` ";
+//$connection1 = new Classes\Database\Connection('database');
 //$connection2 = new Classes\Database\Connection('database2');

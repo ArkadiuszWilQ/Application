@@ -1,5 +1,5 @@
 <?php
-namespace Classes;
+namespace Classes\Core;
 
 use Classes\Routing\Router;
 use Controllers\ErrorController;

@@ -16,7 +16,7 @@ class Router
 
     public function createController()
     {
-        $controllerName = explode('/', substr($this->data['_url'], 1) ?? '')[0];
+        $controllerName = explode('/', substr($this->data['_url'] ?? '', 1) ?? '')[0];
 
         $class = "\Controllers\\" . ucfirst($controllerName) . 'Controller';
 
@@ -29,6 +29,6 @@ class Router
 
     public function getAction()
     {
-        return explode('/', substr($this->data['_url'], 1) ?? '')[1];
+        return explode('/', substr($this->data['_url'] ?? '', 1) ?? '')[1] ?? '';
     }
 }
